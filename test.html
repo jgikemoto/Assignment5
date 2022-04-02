@@ -11,8 +11,9 @@
     </style>
     <script>
         let req = XMLHttpRequest;
-
+        let numbers = [100, 200, 300];
         let stationList = [];
+
         let stationTest = {
             stationId: 'CWAV',
             state: 'AB',
@@ -38,6 +39,7 @@
 
         let latArrayPos = stationTestPos["position"]["latitude"];
         let latDotPos = stationTestPos.position.latitude;
+        let latComboPos = stationTestPos["position"].latitude;
 
 
         let stationsTest = [

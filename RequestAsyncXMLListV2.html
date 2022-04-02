@@ -8,6 +8,7 @@
     <script>
         let selStates = null;
         let divStationsPlaceholder = null;
+
         function bodyOnLoad() {
             selstates = document.getElementById("selStates");
             divStationsPlaceholder = document.getElementById("divStationsPlaceholder");
@@ -31,42 +32,18 @@
                 let MyXML = req.responseXML;
 
                 processXML(MyXML);
-
-
-                
-
-                let credit = MyXML.getElementsByTagName("credit");
-                divStationsPlaceholder.innerHTML = credit[0].innerHTML;
-
-                let stations = MyXML.getElementsByTagName("station");
-                let uList = document.createElement("ul");
-
-                for (x = 0; x < stations.length; x++) {
-                    let station = stations[x];
-
-                    let stationid = stations[x].getElementsByTagName("station_id")[0].innerHTML;
-                    let state = stations[x].getElementsByTagName("state")[0].innerHTML;
-                    let station_name = stations[x].getElementsByTagName("station_name")[0].innerHTML;
-                    let xml_url = stations[x].getElementsByTagName("xml_url")[0].innerHTML;
-
-                    let listItem = stationid + " (" + state + ") - " + station_name;
-
-                    let liCurrent = document.createElement("li");
-                    liCurrent.innerHTML = listItem;
-                    uList.appendChild(liCurrent);
-                }
-                divStationsPlaceholder.appendChild(uList);
             }
-            // helo
         }
-
 
         function selStates_onChange() {
             selstates = document.getElementById("selStates");
             let stateAbbr = selstates.value;
 
             let myList = getStations(stateAbbr);
-            displayStationsList(myList, divStationsPlaceholder)
+            //let myList = getStations2(stateAbbr);
+
+            displayStationsList(myList, divStationsPlaceholder);
+            //displayStationTable(myList, divStationsPlaceholder);
         }
     </script>
 </head>
@@ -134,4 +111,5 @@
     <div id="divStationsPlaceholder"></div>
 </body>
 </html>
-<!-- 0 50 100 110 120 130 140 -->
+
+<!-- 100 110 -->
