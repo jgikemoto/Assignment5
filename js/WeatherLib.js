@@ -80,6 +80,10 @@ function createTableHeader(tblArg) {
     cellStationName.appendChild(document.createTextNode("Station Name"));
     hdrRow.appendChild(cellStationName);
 
+    let latitudeXML = stationsXML[x].getElementsByTagName("latitude")[0].innerHTML;
+    latitude: latitudeXML
+    let longitudeXML = stationsXML[x].getElementsByTagName("longitude")[0].innerHTML;
+    longitude: longitudeXML
 }
 
 function createTableRow(tblArg, stationIdArg, stationNameArg, stationStateArg) {
@@ -96,7 +100,11 @@ function createTableRow(tblArg, stationIdArg, stationNameArg, stationStateArg) {
     let cellStationState = curRow.insertCell();
     cellStationState.appendChild(document.createTextNode(stationStateArg));
     curRow.appendChild(cellStationState);
-}
+
+    let latitudeXML = stationsXML[x].getElementsByTagName("latitude")[0].innerHTML;
+    latitude: latitudeXML
+    let longitudeXML = stationsXML[x].getElementsByTagName("longitude")[0].innerHTML;
+    longitude: longitudeXML
 
 function displayStationTable(stationsList, divAttach) {
     let uTable = document.createElement("table");
